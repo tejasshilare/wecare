@@ -8,15 +8,7 @@ const Header = () => {
     <div className="header">
  
       <Navbar/>
-      {/* <div className="nav-items">
-         <ul>
-          <li>Home</li>
-          <li>Donation</li>
-          <li>About Us</li>
-          <li>Contact</li>
-          <li>Signup</li>
-         </ul>
-      </div> */}
+      <h1>MAkichu</h1>
 
     </div>
   )
