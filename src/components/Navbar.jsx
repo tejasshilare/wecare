@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 import weblg from "../assets/weblg.png";
+import { Link,NavLink } from "react-router-dom";
 const Navbar = () => {
   const [nav, setNav] = useState(true);
 
@@ -12,23 +13,39 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center h-24 max-w-[1240px] px-4 mx-auto text-black">
       {/* <h1 className="w-full text-3xl text-indigo-500 font-bold"> React...</h1> */}
-      <img className="w-[120px] h-[110px]  " src={weblg} alt="Logo" />
+      <a href="/">
+      <img className="w-[120px] h-[110px] "   src={weblg} alt="Logo" />
+      </a>
       <ul className="hidden md:flex uppercase">
+       <Link to="/">
         <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
           Home
         </li>
+        </Link>
+
+        <Link to="/Donation">
         <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
           Donation
         </li>
+        </Link>
+
+        <Link to="/about">
         <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
           About
         </li>
+        </Link>
+
+        <Link to="/Services">
         <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
           Services
         </li>
+        </Link>
+
+        <Link to="/Contact">
         <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
           Contact
         </li>
+        </Link>
       </ul>
       <div onClick={handleNav} className="block md:hidden">
         {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}

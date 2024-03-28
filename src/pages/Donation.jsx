@@ -1,8 +1,14 @@
 import React from 'react'
+import Header from '../components/Header'
 
 const Donation = () => {
   return (
-    <div>Donation</div>
+    <div>
+     
+     <Header/>
+
+
+    </div>
   )
 }
 

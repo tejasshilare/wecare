@@ -4,9 +4,12 @@ import AboutUs from "../components/AboutUs";
 import Gallery from "../components/Gallery";
 import Team from "../components/Team";
 import MiniDashboard from "../components/MiniDashboard";
-const about = () => {
+import { Navbar } from "flowbite-react";
+import Header from "../components/Header";
+const About = () => {
   return (
     <>
+      <Header/>
       <MiniDashboard />
       <Abstract />
       <AboutUs />
@@ -16,4 +19,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
