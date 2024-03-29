@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactTyped } from "react-typed";
+// import { ReactTyped } from "react-typed";
 const Texto = () => {
   return (
     <div class="w-full h-auto flex flex-wrap flex-col items-center">
