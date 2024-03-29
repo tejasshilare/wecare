@@ -15,10 +15,26 @@ const Team = () => {
         </div>
         <div class="container p-5 mx-auto">
           <div class="flex flex-wrap -m-4">
-            <TeamCard />
-            <TeamCard />
-            <TeamCard />
-            <TeamCard />
+            <TeamCard
+              name="Sanskriti Satpute"
+              designation="Full Stack Developer"
+              intro="Sanskriti Satpute, our Full Stack Developer, plays a pivotal role in crafting and optimizing our projects with her expertise."
+            />
+            <TeamCard
+              name="Sudhanshu Sonare"
+              designation="Full Stack Developer"
+              intro="Sudhanshu Sonare, our Full Stack Developer, plays a pivotal role in crafting and optimizing our projects with her expertise."
+            />
+            <TeamCard
+              name="Tejas Mete"
+              designation="Full Stack Developer"
+              intro="Tejas Mete, our Full Stack Developer, plays a pivotal role in crafting and optimizing our projects with her expertise."
+            />
+            <TeamCard
+              name="Tejas Shilare"
+              designation="Full Stack Developer"
+              intro="Tejas Shilare, our Full Stack Developer, plays a pivotal role in crafting and optimizing our projects with her expertise."
+            />
           </div>
         </div>
       </div>
