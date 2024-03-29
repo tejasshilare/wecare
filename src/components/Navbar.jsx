@@ -43,8 +43,8 @@ const Navbar = () => {
          
 
         <Link to="" className="pl-[10px]">
-       <button className="w-[100px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-green-500 text-center hidden sm:inline-block">
-        Login
+       <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-green-500 text-center hidden sm:inline-block">
+        Login/signup
        </button>
        </Link>
         
