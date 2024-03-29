@@ -109,6 +109,20 @@ function Contactpage() {
                     />
                   </div>
 
+               
+                <hr className="mb-6 border-t" />
+                <div className="mb-6 text-center">
+                  <button
+                    className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
+                    type="button"
+                  >
+                    Send Message
+                  </button>
+                </div>
+                
+              </form>
+
+
                   <hr className="mb-6 border-t" />
                   <div className="mb-6 text-center">
                     <button
@@ -120,12 +134,16 @@ function Contactpage() {
                   </div>
                 </form>
               </div>
+
             </div>
           </div>
         </div>
       </div>
+
+    </div>
     </>
   );
 }
 
 export default Contactpage;
+
