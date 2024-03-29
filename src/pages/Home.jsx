@@ -5,6 +5,7 @@ import Faq from "../components/Faq";
 import CommunitySection from "../components/CommunitySection";
 import { createBrowserRouter } from "react-router-dom";
 
+
 const Home = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const Home = () => {
       <Texto />
       <CommunitySection />
       <Faq></Faq>
+      
     </>
   );
 };
