@@ -16,37 +16,42 @@ const Navbar = () => {
       <a href="/">
       <img className="w-[120px] h-[110px] "   src={weblg} alt="Logo" />
       </a>
-      <ul className="hidden md:flex uppercase">
+      <ul className="hidden md:flex ">
        <Link to="/">
-        <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
+        <li className="p-4  hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
           Home
         </li>
         </Link>
 
         <Link to="/Donation">
-        <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
+        <li className="p-4  hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
           Donation
         </li>
         </Link>
 
         <Link to="/about">
-        <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
+        <li className="p-4  hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
           About
         </li>
         </Link>
 
-        <Link to="/Services">
-        <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
-          Services
-        </li>
-        </Link>
-
         <Link to="/Contact">
-        <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
+        <li className="p-4  hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
           Contact
         </li>
         </Link>
+         
+
+        <Link to="" className="pl-[10px]">
+       <button className="w-[100px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-green-500 text-center hidden sm:inline-block">
+        Login
+       </button>
+       </Link>
+        
       </ul>
+    
+      
+
       <div onClick={handleNav} className="block md:hidden">
         {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
