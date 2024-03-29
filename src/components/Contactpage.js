@@ -12,16 +12,16 @@ function Contactpage() {
       </div>
 
     <div className="h-full bg-white dark:bg-gray-900 mb-4">
-      {/* Container */}
+      
       <div className="mx-auto">
         <div className="flex justify-center px-6 py-12">
-          {/* Row */}
+          
           <div className="w-full xl:w-3/4 lg:w-11/12 flex">
-            {/* Col */}
+          
             <div className="w-full h-auto bg-gray-400 dark:bg-gray-800 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg">
               <img src={ContactPageImg} alt="img" className="w-full h-full object-cover rounded" />
             </div>
-            {/* Col */}
+            
             <div className="w-full lg:w-7/12 bg-white dark:bg-gray-700 p-5 rounded-lg lg:rounded-l-none">
               <h3 className="py-4 text-2xl text-center text-gray-800 dark:text-white">Contact Us!</h3>
               <form className="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded">
@@ -90,7 +90,7 @@ function Contactpage() {
                 <hr className="mb-6 border-t" />
                 <div className="mb-6 text-center">
                   <button
-                    className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
+                    className=" px-4 py-2 font-bold text-white bg-orange-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
                     type="button"
                   >
                     Send Message

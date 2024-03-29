@@ -2,7 +2,7 @@ import React from "react";
 
 const GalleryCard = (props) => {
   return (
-    <div className="md:w-1/3 sm:w-1/2 p-4">
+    <div className="md:w-1/3 sm:w-1/2 p-4 mb-[10px] ">
       <div className="flex relative">
         <img
           alt="gallery"
