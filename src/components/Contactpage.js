@@ -7,8 +7,8 @@ function Contactpage() {
   return (
       <>
       <div className="flex flex-col items-center justify-center m-[110px]">
-       <h1 className="text-5xl mb-4 text-orange-500 font-semibold font-serif ">Contact Us</h1>
-       <p className="text-center text-2xl text-gray-500 font-serif">Any Questions or Remarks? Just write us a message!!</p>
+       <h1 className="text-5xl mb-4 text-orange-500 font-semibold  ">Contact Us</h1>
+       <p className="text-center text-2xl text-gray-500 ">Any Questions or Remarks? Just write us a message!!</p>
       </div>
 
     <div className="h-full bg-white dark:bg-gray-900 mb-4">
