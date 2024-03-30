@@ -54,7 +54,7 @@ export function Accordion() {
 
 const Faq = () => {
     return (<>
-        <div className="grid grid-cols-5 bg-gray-800 p-12 m-3 rounded-xl">
+        <div className="grid grid-cols-5 p-12 m-3 rounded-xl">
             <p></p>
             <h1 className='text-[#FF7918] font-bold text-l md:text-2xl text-center'>Frequently Asked Questions</h1>
 

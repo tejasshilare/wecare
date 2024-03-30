@@ -11,7 +11,7 @@ function Contactpage() {
        <p className="text-center text-2xl text-gray-500 ">Any Questions or Remarks? Just write us a message!!</p>
       </div>
 
-    <div className="h-full bg-white dark:bg-gray-900 mb-4">
+    <div className="h-full bg-white mb-4">
       
       <div className="mx-auto">
         <div className="flex justify-center px-6 py-12">
