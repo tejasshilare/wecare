@@ -7,11 +7,11 @@ const Contact = () => {
   return (
     <div>
       <Header/>
-      <Contactpage/>
-      {/* <div className="flex justify-center">
+      {/* <Contactpage/> */}
+      <div className="flex justify-center">
             <img className="w-[75%] p-5 m-5" src={contact}  alt={contact}/>
      
-            </div > */}
+            </div >
       <Footer/>
     </div>
   )
