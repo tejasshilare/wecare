@@ -1,5 +1,5 @@
 import React from "react";
-import testimonial from '../assets/testimonial frame.png'
+
 const CommunitySection = () => {
   return (
     <>
@@ -10,7 +10,7 @@ const CommunitySection = () => {
               "Loved By Community!!!"
             </p>
             <div className="flex justify-center">
-            <img className="w-[80%] p-5 m-5" src={testimonial}  alt={testimonial}/>
+
             </div >
             <div class="w-36 h-1 border-b-4 border-yellow-400 mt-2 rounded-2xl md:mt-4 mb-12"></div>
           </div>
