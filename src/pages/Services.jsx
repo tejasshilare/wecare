@@ -1,10 +1,7 @@
 import React from "react";
-import Header from "../components/Header";
 
 const Services = () => {
-  return <div>
-    <Header/>
-  </div>;
+  return <div>Services</div>;
 };
 
 export default Services;
