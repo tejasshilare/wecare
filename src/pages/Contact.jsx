@@ -1,17 +1,15 @@
-import React from 'react'
-import Header from '../components/Header'
-import Footer from "../components/Footer";
-import Contactpage from '../components/Contactpage';
-
+import React from "react";
+import Contactpage from "../components/Contactpage";
 const Contact = () => {
   return (
     <div>
-      <Header/>
-      <Contactpage/>
-    
-      <Footer/>
+      <Contactpage />
+      {/* <div className="flex justify-center">
+            <img className="w-[75%] p-5 m-5" src={contact}  alt={contact}/>
+     
+            </div > */}
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

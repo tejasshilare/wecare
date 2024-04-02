@@ -1,15 +1,7 @@
-import React from 'react'
-import Header from '../components/Header'
+import React from "react";
 
 const Donation = () => {
-  return (
-    <div>
-     
-     <Header/>
+  return <div className=" w-full h-80 text-center">Donation</div>;
+};
 
-
-    </div>
-  )
-}
-
-export default Donation
+export default Donation;
