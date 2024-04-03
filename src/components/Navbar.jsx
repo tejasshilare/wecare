@@ -42,7 +42,7 @@ const Navbar = () => {
         </Link>
 
         <Link to="/signup" className="pl-[10px]">
-          <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-green-500 text-center hidden sm:inline-block">
+          <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block">
             Login/signup
           </button>
         </Link>
@@ -54,14 +54,14 @@ const Navbar = () => {
       <div
         className={
           !nav
-            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-800 bg-[#416986] md:hidden ease-in-out duration-500"
+            ? "fixed z-10 left-0 top-0 w-[60%] h-full border-r border-r-gray-800 bg-[#416986] md:hidden ease-in-out duration-500"
             : "fixed left-[-100%]"
         }
       >
         <div className="flex justify-between">
           <img className="w-[110px] " src={weblg} alt={weblg} />
           <Link to="/signup" className=" my-auto mx-6 md:hidden inline-block ">
-            <button className="w-[110px] h-[35px] text-white  bg-orange-400 rounded-full hover:bg-green-500 text-center ">
+            <button className="w-[110px] h-[35px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center ">
               Login/signup
             </button>
           </Link>
