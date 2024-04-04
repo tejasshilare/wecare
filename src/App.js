@@ -7,8 +7,6 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Donation from "./pages/Donation";
 import Signup from "./pages/Signup";
-import SignUpD from "./components/SignUpD";
-import { Switch } from "@material-tailwind/react";
 
 function App() {
   return (
