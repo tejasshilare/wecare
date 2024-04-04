@@ -1,6 +1,7 @@
 import React from "react";
 import donlogo from "../assets/don-logo.png";
 import reclogo from "../assets/rec-logo.png";
+import { Link } from "react-router-dom";
 const Contact = () => {
   return (
     <>
