@@ -2,8 +2,7 @@ import React from "react";
 import donlogo from "../assets/don-logo.png";
 import reclogo from "../assets/rec-logo.png";
 import { Link } from "react-router-dom";
-import SignUpD from "../components/SignUpD";
-import SignUpR from "../components/SignUpR";
+
 const Contact = () => {
   return (
     <>
@@ -24,7 +23,7 @@ const Contact = () => {
           </p>
           <div class="flex items-center justify-center">
           <button class="bg-white text-black py-2 px-4 rounded mt-4">
-          <Link to="../components/SignUpD">Sign Up Now</Link>  
+          Sign Up Now  
           </button>
           </div>
         </div>
@@ -43,7 +42,7 @@ const Contact = () => {
           </p>
           <div class="flex items-center justify-center">
           <button class="bg-white text-black py-2 px-4 rounded mt-4">
-           <Link to="../components/SignUpR">Sign Up Now</Link> 
+           Sign Up Now
           </button>
           </div>
         </div>
