@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 import weblg from "../assets/weblg.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [nav, setNav] = useState(true);
 
@@ -55,12 +55,16 @@ const Navbar = () => {
         className={
           !nav
             ? "fixed z-10 left-0 top-0 w-[60%] h-full border-r border-r-gray-800 bg-[#416986] md:hidden ease-in-out duration-500"
-            : "fixed left-[-100%]"
+            : "fixed left-[-100%] z-10 top-0 w-[60%] h-full border-r border-r-gray-800 bg-[#416986] ease-in-out duration-500 "
         }
       >
         <div className="flex justify-between">
           <img className="w-[110px] " src={weblg} alt={weblg} />
-          <Link to="/signup" className=" my-auto mx-6 md:hidden inline-block ">
+          <Link
+            to="/signup"
+            onClick={handleNav}
+            className=" my-auto mx-6 md:hidden inline-block "
+          >
             <button className="w-[110px] h-[35px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center ">
               Login/signup
             </button>
@@ -68,22 +72,22 @@ const Navbar = () => {
         </div>
 
         <ul className="p-4 uppercase">
-          <Link to="/">
+          <Link to="/" onClick={handleNav}>
             <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-ggray-400 md:hover:bg-gray-400 lg:hover:font-2xl">
               Home
             </li>
           </Link>
-          <Link to="/Donation">
+          <Link to="/Donation" onClick={handleNav}>
             <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-400 md:hover:bg-gray-400 lg:hover:font-2xl">
               Donation
             </li>
           </Link>
-          <Link to="/about">
+          <Link to="/about" onClick={handleNav}>
             <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-400 md:hover:bg-gray-400 lg:hover:font-2xl">
               About
             </li>
           </Link>
-          <Link to="/Contact">
+          <Link to="/Contact" onClick={handleNav}>
             <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
               Contact
             </li>
