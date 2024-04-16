@@ -40,6 +40,7 @@ export function SelectSignUp({ isSignUpDonor, setIsSignUpDonor, isSignUpReciever
               onClick={handleSignUpDonorClick}
             >
               Sign Up Now
+              
             </button>
           </div>
         </div>
