@@ -1,4 +1,6 @@
-import { User } from "../models/userModels";
+import  {User}  from "../models/userModel.js";
+import bcryptjs from "bcryptjs";
+
 
  export const Register = async(req,res) =>{
    try{
@@ -16,9 +18,12 @@ import { User } from "../models/userModels";
              success:false,
          })
        }
+       
+       const hashPassword = await bcryptjs.hash(Password,16);
 
        await User.create({
-         FName,LName,Email,Phoneno,Password
+         FName,LName,Email,Phoneno,
+         Password:hashPassword
        }); 
 
        return res.status(201).json({
