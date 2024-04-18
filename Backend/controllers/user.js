@@ -28,6 +28,7 @@ export const Login = async(req,res)=>{
         success:false
       })
      }
+     
      const tokenData={
       id:user._id
      }
@@ -42,7 +43,7 @@ export const Login = async(req,res)=>{
   }
 }
  export const Logout = async (req,res)=>{
-  return res.status(200).cookie("token","",{expiresIn:new Date(Date.now()),httpOnly:true}).json({
+  return res.status(200).cookie(token,"",{expiresIn:new Date(Date.now()),httpOnly:true}).json({
     message:"user logged out successfully",
     success:true
   });
