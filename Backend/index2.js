@@ -29,26 +29,16 @@ app.use(cookieParser());
 
 
 const corsOptions = {
-   origin: 'http://localhost:3000', // Allow requests from this origin
-   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
- };
- app.use(cors(corsOptions));
-
-app.get("/",(req,res)=>{
-    res.status(200).json({
-       message:"Hello im speaking from backend",
-       sucess:true
-    });
-});
+   origin:'http://localhost:3000',
+   credentials:true
+}
+app.use(cors(corsOptions));
 
 
 //api
 app.use("/api/v1/user",userRoute);
 //http://localhost:8080/api/v1/user + /register(from userRoute)
 
-const callBackFunction = ()=>{
-   console.log(`Server listen ar port ${process.env.PORT}`);
-}
-
-
-app.listen(process.env.PORT,callBackFunction);
+app.listen(process.env.PORT,() => {
+   console.log(`Server listen at port ${process.env.PORT}`);
+});
