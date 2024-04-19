@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Donation from "./pages/Donation";
 import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/donation" element={<Donation />} />
         <Route path="/signup" element={<Signup/>} />
+        <Route path="/login" element={<Login/>} />
       </Routes>
       <Footer />
     </BrowserRouter>

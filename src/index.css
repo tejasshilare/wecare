@@ -36,3 +36,8 @@ body {
 }
 
 /* SignUp Css */
+
+/* Login Css */
+.login-container{
+  margin-inline: auto;
+}
