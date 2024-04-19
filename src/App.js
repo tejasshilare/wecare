@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 import Donation from "./pages/Donation";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +22,7 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         <Route path="/login" element={<Login/>} />
       </Routes>
+      <Toaster/>
       <Footer />
     </BrowserRouter>
   );
