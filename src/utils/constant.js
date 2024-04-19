@@ -1,0 +1,1 @@
+export const API_END_POINT = "http://loacalhost:8080/api/v1/user";
