@@ -1,7 +1,6 @@
 import { User } from "../models/userModel.js";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { SiEspressif } from "react-icons/si";
 
 export const Login = async (req, res) => {
   try {
