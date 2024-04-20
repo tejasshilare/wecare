@@ -5,6 +5,8 @@ import weblg from "../assets/weblg.png";
 import { Link } from "react-router-dom";
 import usericon from "../assets/usericon.svg";
 import { useSelector } from "react-redux";
+import axios from "axios";
+import { API_END_POINT } from "../utils/constant";
 
 const Navbar = () => {
   const user = useSelector((store) => store.app.user);
@@ -13,6 +15,15 @@ const Navbar = () => {
   const login = () => {
     if (user != null) return true;
     else return false;
+  };
+
+  const logoutHandler = async () => {
+    try {
+      const res = await axios.get(`${API_END_POINT}/logout`);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleNav = () => {
@@ -51,7 +62,7 @@ const Navbar = () => {
             <Link to="/" className="pl-[10px]">
               <li
                 className="p-4 hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer lg:hover:font-2xl"
-                onClick={!login}
+                onClick={logoutHandler}
               >
                 logout
               </li>

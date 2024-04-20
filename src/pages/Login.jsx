@@ -35,6 +35,7 @@ const Login = () => {
         toast.success(res.data.message);
       }
       dispatch(setUser(res.data.user));
+      setIsLogin(true);
       navigate("/Home");
     } catch (error) {
       toast.error(error.response.data.message);
