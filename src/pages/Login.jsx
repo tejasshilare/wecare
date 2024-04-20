@@ -19,62 +19,42 @@ const Login = () => {
 
   const getInputData = async (e) => {
     e.preventDefault();
-    if (isLogin) {
-      const user = { Email, Password };
-      try {
-        const res = await axios.post(`${API_END_POINT}/login`, user, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        });
-        if (res.data.success) {
-          toast.success(res.data.message);
-        }
-        dispatch(setUser(res.data.user));
-        navigate("/Home");
-      } catch (error) {
-        toast.error(error.response.data.message);
-        console.log(error);
-        if (error.response.status === 401) {
-          const redirectToAnotherPage = window.confirm(
-            "Invalid credentials. Click to create a new account"
-          );
-          if (redirectToAnotherPage) {
-            // Redirect to another page
-            navigate("/Signup");
-          }
-        }
+    console.log("Start of getInputData function");
+
+    const user = { Email, Password };
+    console.log("User object:", user);
+    try {
+      const res = await axios.post(`${API_END_POINT}/login`, user, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
+      console.log("Login response:", res);
+      if (res.data.success) {
+        toast.success(res.data.message);
       }
-    } else {
-      const user = { Email, Password };
-      try {
-        const res = await axios.post(`${API_END_POINT}/register`, user, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        });
-        if (res.data.success) {
-          toast.success(res.data.message);
+      dispatch(setUser(res.data.user));
+      navigate("/Home");
+    } catch (error) {
+      toast.error(error.response.data.message);
+      console.log("Login error:", error);
+      if (error.response.status === 401) {
+        const redirectToAnotherPage = window.confirm(
+          "Invalid credentials. Click to create a new account"
+        );
+        console.log("Redirect confirmation:", redirectToAnotherPage);
+        if (redirectToAnotherPage) {
+          // Redirect to another page
+          navigate("/Signup");
         }
-        setIsLogin(true);
-      } catch (error) {
-        toast.error(error.response.data.message);
-        console.log(error);
-        if (error.response.status === 401) {
-          const redirectToAnotherPage = window.confirm(
-            "Invalid credentials. Click to create a new account"
-          );
-          if (redirectToAnotherPage) {
-            // Redirect to another page
-            navigate("/Signup");
-          }
-        }
+      } else {
+        navigate("/Home");
       }
     }
     setEmail("");
     setPassword("");
+    console.log("End of getInputData function");
   };
 
   return (
@@ -150,7 +130,6 @@ const Login = () => {
                           <button
                             className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-dark-3 transition duration-150 ease-in-out hover:shadow-dark-2 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:shadow-dark-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
                             type="submit"
-                            onClick={loginHandler}
                             data-twe-ripple-init
                             data-twe-ripple-color="light"
                             style={{
@@ -172,6 +151,7 @@ const Login = () => {
                             className="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-danger-50/50 hover:text-danger-600 focus:border-danger-600 focus:bg-danger-50/50 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-rose-950 dark:focus:bg-rose-950"
                             data-twe-ripple-init
                             data-twe-ripple-color="light"
+                            onClick={loginHandler}
                           >
                             <NavLink to="/signup" className="text-white-500">
                               {" "}
