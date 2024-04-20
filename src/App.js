@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Donation from "./pages/Donation";
 import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import { Toaster } from "react-hot-toast";
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/donation" element={<Donation />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Toaster />
       <Footer />

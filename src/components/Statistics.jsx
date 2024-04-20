@@ -4,12 +4,13 @@ import React from "react";
 const Statistics = () => {
   return (
     <section class="text-gray-600 body-font">
-      <div class="container  px-24 py-12 mx-auto">
+      <div class="container px-4 md:px-24 py-12 mx-auto">
         <div class="flex flex-col text-center w-full mb-20">
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
             Statistics
           </h1>
-          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+          <div class="w-[100px] h-1 border-b-4 border-orange-500 rounded-2xl md:mt-4 mb-12 mx-auto"></div>
+          <p class=" mx-auto text-justify leading-relaxed text-base">
             Our "WeCare Application" has served 21.2K individuals across 34
             cities in India and beyond, connecting with 221 NGOs spanning across
             4 countries. Through our innovative platform, surplus resources
@@ -17,7 +18,7 @@ const Statistics = () => {
             supplies have been efficiently redistributed to local charities,
             shelters, and community organizations in need. With user-friendly
             interfaces, intuitive matching algorithms, and data-driven
-            analytics, we've facilitated seamless connectivity between donors
+            analytics, we've seamless connectivity between donors
             and recipients, ensuring surplus resources are redirected to empower
             communities and support inclusive development. Joining forces with
             NGOs, government agencies, and stakeholders, we're not just building
@@ -35,7 +36,7 @@ const Statistics = () => {
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                class="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                class="text-orange-500 w-12 h-12 mb-3 inline-block"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -59,7 +60,7 @@ const Statistics = () => {
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                class="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                class="text-orange-500 w-12 h-12 mb-3 inline-block"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -82,7 +83,7 @@ const Statistics = () => {
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                class="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                class="text-orange-500 w-12 h-12 mb-3 inline-block"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -105,7 +106,7 @@ const Statistics = () => {
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                class="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                class="text-orange-500 w-12 h-12 mb-3 inline-block"
                 viewBox="0 0 24 24"
               >
                 <path
