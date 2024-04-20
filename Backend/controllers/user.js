@@ -33,10 +33,13 @@ export const Login = async (req, res) => {
     const token = await jwt.sign(tokenData, "awdadsadawawcawcawd", {
       expiresIn: "1d",
     });
-    return res.status(200).cookie("token", token, { httpOnly: true }).json({
-      message: "Welcome back ${user.FName}",
-      success: true,
-    });
+    return res
+      .status(200)
+      .cookie("token", token, { httpOnly: true })
+      .json({
+        message: `Welcome back ${user.FName}`,
+        success: true,
+      });
   } catch (error) {
     console.log(error);
   }
