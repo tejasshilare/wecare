@@ -38,15 +38,15 @@ const Navbar = () => {
             Contact
           </li>
         </Link>
-        <Link to="/" className="pl-[10px]">
-          <li className="p-4 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
-            logout
-          </li>
-        </Link>
         <Link to="/signup" className="pl-[10px]">
-          <li className="p-4 text-green-500 font-medium hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer rounded-md md:hover:bg-orange-300 lg:hover:font-2xl ">
+          <li className="p-4 text-green-500 font-medium hover:bg-slate-100 transition-colors duration-300 cursor-pointer rounded-md ">
             Register
           </li>
+        </Link>
+        <Link to="/" className="pl-[10px]">
+          <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block">
+            logout
+          </button>
         </Link>
         <Link to="/login" className="pl-[10px]">
           <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block">
