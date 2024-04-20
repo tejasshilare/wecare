@@ -44,19 +44,19 @@ const Navbar = () => {
           </li>
         </Link>
         <Link to="/signup" className="pl-[10px]">
-          <li className="p-4 text-green-500 font-medium hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer rounded-full md:hover:bg-orange-300 lg:hover:font-2xl ">
+          <li className="p-4 text-green-500 font-medium hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer rounded-md md:hover:bg-orange-300 lg:hover:font-2xl ">
             Register
-          </li>
-        </Link>
-        <Link to="/" className="pl-[10px]">
-          <li className="w-[35px] h-[35px] mt-[8px]">
-            <img src={usericon} alt="" />
           </li>
         </Link>
         <Link to="/login" className="pl-[10px]">
           <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block">
             Login
           </button>
+        </Link>
+        <Link to="/" className="pl-[10px]">
+          <li className="w-[35px] h-[35px] mt-[8px]">
+            <img src={usericon} alt="" />
+          </li>
         </Link>
       </ul>
 
