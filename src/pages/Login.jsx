@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_END_POINT } from "../utils/constant";
 import toast from "react-hot-toast";
@@ -8,6 +8,7 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const loginHandler = () => {
     setIsLogin(!isLogin);
@@ -15,23 +16,41 @@ const Login = () => {
 
   const getInputData = async (e) => {
     e.preventDefault();
-
-    //login
-    const user = { Email, Password };
-
-    try {
-      const res = await axios.post(`${API_END_POINT}/login`, user, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      });
-      if (res.data.success) {
-        toast.success(res.data.message);
+    if (isLogin) {
+      const user = { Email, Password };
+      try {
+        const res = await axios.post(`${API_END_POINT}/login`, user, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        });
+        console.log(res);
+        if (res.data.success) {
+          toast.success(res.data.message);
+        }
+        navigate("/Home");
+      } catch (error) {
+        toast.error(error.response.data.message);
+        console.log(error);
       }
-    } catch (error) {
-      toast.error(error.response.data.message);
-      console.log(error);
+    } else {
+      const user = { Email, Password };
+      try {
+        const res = await axios.post(`${API_END_POINT}/register`, user, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        });
+        if (res.data.success) {
+          toast.success(res.data.message);
+        }
+        setIsLogin(true);
+      } catch (error) {
+        toast.error(error.response.data.message);
+        console.log(error);
+      }
     }
     setEmail("");
     setPassword("");
