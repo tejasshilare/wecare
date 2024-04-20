@@ -48,11 +48,7 @@ const Navbar = () => {
             Register
           </li>
         </Link>
-        <Link to="/" className="pl-[10px]">
-          <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block">
-            logout
-          </button>
-        </Link>
+      
         <Link to="/login" className="pl-[10px]">
           <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block">
             Login
