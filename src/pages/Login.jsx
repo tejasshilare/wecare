@@ -171,15 +171,20 @@ const Login = () => {
                   >
                     <div className="px-4 py-6 text-white md:mx-6 md:p-12">
                       <h4 className="mb-6 text-xl font-semibold">
-                        We are more than just a company
+                      Great to see you again! Ready to dive back into the WeCare Community?
                       </h4>
                       <p className="text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.
+                        
                       </p>
+                      <ul>
+                        <li className="flex">
+                          <img className="me-3 filter grayscale" src={"https://replate-storage.s3.us-west-1.amazonaws.com/assets/icons/signup_page/02_support.svg"} alt="" width={"30px"}/>
+                        Support your local community with food donation
+                        </li>
+                        <li className="flex mt-3">
+                        <img className="me-3 filter grayscale" src={"https://replate-storage.s3.us-west-1.amazonaws.com/assets/icons/signup_page/03_schedule.svg"} alt="s" width={"30px"}/>
+                      Schedule a surplus food pickup in seconds</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
