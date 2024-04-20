@@ -19,27 +19,32 @@ const Navbar = () => {
 
       <ul className="hidden md:flex ">
         <Link to="/Home">
-          <li className="p-4  hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
+          <li className="p-4 hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer  lg:hover:font-2xl">
             Home
           </li>
         </Link>
         <Link to="/Donation">
-          <li className="p-4  hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
+          <li className="p-4  hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer lg:hover:font-2xl">
             Donation
           </li>
         </Link>
         <Link to="/about">
-          <li className="p-4  hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
+          <li className="p-4  hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer lg:hover:font-2xl">
             About
           </li>
         </Link>
         <Link to="/Contact">
-          <li className="p-4 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
+          <li className="p-4 hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer lg:hover:font-2xl">
             Contact
           </li>
         </Link>
+        <Link to="/" className="pl-[10px]">
+          <li className="p-4 hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer lg:hover:font-2xl">
+            logout
+          </li>
+        </Link>
         <Link to="/signup" className="pl-[10px]">
-          <li className="p-4 text-green-500 font-medium hover:bg-slate-100 transition-colors duration-300 cursor-pointer rounded-md ">
+          <li className="p-4 text-green-500 font-medium hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer rounded-md md:hover:bg-orange-300 lg:hover:font-2xl ">
             Register
           </li>
         </Link>
@@ -100,12 +105,12 @@ const Navbar = () => {
             </li>
           </Link>
           <Link to="/Contact" onClick={handleNav}>
-            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
+            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer lg:hover:font-2xl">
               Contact
             </li>
           </Link>
           <Link to="/signup" onClick={handleNav}>
-            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-300 md:hover:bg-gray-400 lg:hover:font-2xl">
+            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer lg:hover:font-2xl">
               Register
             </li>
           </Link>
