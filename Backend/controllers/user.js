@@ -1,7 +1,6 @@
 import { User } from "../models/userModel.js";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { SiEspressif } from "react-icons/si";
 
 export const Login = async (req, res) => {
   try {
@@ -34,10 +33,13 @@ export const Login = async (req, res) => {
     const token = await jwt.sign(tokenData, "awdadsadawawcawcawd", {
       expiresIn: "1d",
     });
-    return res.status(200).cookie("token", token, { httpOnly: true }).json({
-      message: "Welcome back ${user.FName}",
-      success: true,
-    });
+    return res
+      .status(200)
+      .cookie("token", token, { httpOnly: true })
+      .json({
+        message: `Welcome back ${user.FName}`,
+        success: true,
+      });
   } catch (error) {
     console.log(error);
   }
