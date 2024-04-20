@@ -3,12 +3,15 @@ import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_END_POINT } from "../utils/constant";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/userSlice";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const loginHandler = () => {
     setIsLogin(!isLogin);
@@ -25,14 +28,23 @@ const Login = () => {
           },
           withCredentials: true,
         });
-        console.log(res);
         if (res.data.success) {
           toast.success(res.data.message);
         }
+        dispatch(setUser(res.data.user));
         navigate("/Home");
       } catch (error) {
         toast.error(error.response.data.message);
         console.log(error);
+        if (error.response.status === 401) {
+          const redirectToAnotherPage = window.confirm(
+            "Invalid credentials. Click to create a new account"
+          );
+          if (redirectToAnotherPage) {
+            // Redirect to another page
+            navigate("/Signup");
+          }
+        }
       }
     } else {
       const user = { Email, Password };
@@ -50,6 +62,15 @@ const Login = () => {
       } catch (error) {
         toast.error(error.response.data.message);
         console.log(error);
+        if (error.response.status === 401) {
+          const redirectToAnotherPage = window.confirm(
+            "Invalid credentials. Click to create a new account"
+          );
+          if (redirectToAnotherPage) {
+            // Redirect to another page
+            navigate("/Signup");
+          }
+        }
       }
     }
     setEmail("");
@@ -129,6 +150,7 @@ const Login = () => {
                           <button
                             className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-dark-3 transition duration-150 ease-in-out hover:shadow-dark-2 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:shadow-dark-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
                             type="submit"
+                            onClick={loginHandler}
                             data-twe-ripple-init
                             data-twe-ripple-color="light"
                             style={{
@@ -171,19 +193,33 @@ const Login = () => {
                   >
                     <div className="px-4 py-6 text-white md:mx-6 md:p-12">
                       <h4 className="mb-6 text-xl font-semibold">
-                      Great to see you again! Ready to dive back into the WeCare Community?
+                        Great to see you again! Ready to dive back into the
+                        WeCare Community?
                       </h4>
-                      <p className="text-sm">
-                        
-                      </p>
+                      <p className="text-sm"></p>
                       <ul>
                         <li className="flex">
-                          <img className="me-3 filter grayscale" src={"https://replate-storage.s3.us-west-1.amazonaws.com/assets/icons/signup_page/02_support.svg"} alt="" width={"30px"}/>
-                        Support your local community with food donation
+                          <img
+                            className="me-3 filter grayscale"
+                            src={
+                              "https://replate-storage.s3.us-west-1.amazonaws.com/assets/icons/signup_page/02_support.svg"
+                            }
+                            alt=""
+                            width={"30px"}
+                          />
+                          Support your local community with food donation
                         </li>
                         <li className="flex mt-3">
-                        <img className="me-3 filter grayscale" src={"https://replate-storage.s3.us-west-1.amazonaws.com/assets/icons/signup_page/03_schedule.svg"} alt="s" width={"30px"}/>
-                      Schedule a surplus food pickup in seconds</li>
+                          <img
+                            className="me-3 filter grayscale"
+                            src={
+                              "https://replate-storage.s3.us-west-1.amazonaws.com/assets/icons/signup_page/03_schedule.svg"
+                            }
+                            alt="s"
+                            width={"30px"}
+                          />
+                          Schedule a surplus food pickup in seconds
+                        </li>
                       </ul>
                     </div>
                   </div>

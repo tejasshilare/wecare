@@ -45,13 +45,10 @@ export const Login = async (req, res) => {
   }
 };
 export const Logout = async (req, res) => {
-  return res
-    .status(200)
-    .cookie(token, "", { expiresIn: new Date(Date.now()), httpOnly: true })
-    .json({
-      message: "user logged out successfully",
-      success: true,
-    });
+  res.clearCookie("token").status(200).json({
+    message: "User logged out successfully",
+    success: true,
+  });
 };
 
 export const Register = async (req, res) => {
