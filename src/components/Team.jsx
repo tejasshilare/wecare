@@ -8,13 +8,13 @@ import sanskriti from "../assets/sanskriti.jpg";
 const Team = () => {
   return (
     <section class="text-white body-font bg-gray-800 m-2 ">
-      <div class="container px-24 py-24 mx-auto m-[-1px]">
+      <div class="container px-4 md:px-24 py-24 mx-auto m-[-1px]">
         <div class="text-center mb-8">
           <h1 class="sm:text-3xl text-2xl font-medium title-font text-white mb-4">
             Our Team
           </h1>
           <div class="flex mt-6 justify-center">
-            <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+            <div class="w-16 h-1 rounded-full bg-orange-500 inline-flex"></div>
           </div>
         </div>
         <div class="container p-5 mx-auto">

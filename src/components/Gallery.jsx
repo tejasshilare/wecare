@@ -11,12 +11,13 @@ const Gallery = () => {
   return (
     <>
       <section className="text-gray-600 body-font m-3">
-        <div className="container px-16 mx-auto">
+        <div className="container md:px-16 px-10 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
               Gallery
             </h1>
-            <p className="md:w-2/3 mx-auto leading-relaxed text-base">
+            <div class="w-[80px] h-1 border-b-4 border-orange-500 rounded-2xl md:mt-4 mb-12 mx-auto"></div>
+            <p className=" mx-auto leading-relaxed text-base">
               Explore images capturing the essence of generosity as surplus
               resources, including food, clothing, educational materials, and
               essential supplies, find their way to those in need. Witness the
