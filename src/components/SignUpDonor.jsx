@@ -2,35 +2,30 @@ import React, { useState } from "react";
 import donateimg from "../assets/donate-img.png";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import {API_END_POINT} from "../utils/constant.js";
+import { API_END_POINT } from "../utils/constant.js";
 import toast from "react-hot-toast";
 
-
-
 const SignUpDonor = () => {
-  
-  const [FName,setFirstName] = useState(""); 
-  const [LName,setLastName] = useState(""); 
-  const [Phoneno,setPhoneNumber] = useState(""); 
-  const [Email,setEmail] = useState(""); 
-  const [Password,setPassword] = useState(""); 
+  const [FName, setFirstName] = useState("");
+  const [LName, setLastName] = useState("");
+  const [Phoneno, setPhoneNumber] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
 
-
-  const getInputData = async (e) =>{
+  const getInputData = async (e) => {
     e.preventDefault();
 
     const user = { FName, LName, Phoneno, Email, Password };
     console.log(user);
     try {
-        const res = await axios.post(`${API_END_POINT}/register`, user);
-        console.log(res);
-        if(res.data.success){
-          toast.success(res.data.message);
+      const res = await axios.post(`${API_END_POINT}/register`, user);
+      console.log(res);
+      if (res.data.success) {
+        toast.success(res.data.message);
       }
-  
     } catch (error) {
       toast.error(error.response.data.message);
-       console.log(error);
+      console.log(error);
     }
 
     setFirstName("");
@@ -38,13 +33,7 @@ const SignUpDonor = () => {
     setPhoneNumber("");
     setEmail("");
     setPassword("");
-}
- 
-     
-
-
-
-
+  };
 
   return (
     <>
@@ -53,13 +42,11 @@ const SignUpDonor = () => {
 
         <form
           className="bg-white p-8 rounded-lg w-[400px] shadow-md"
-         onSubmit={getInputData}
+          onSubmit={getInputData}
         >
           <h1 className="font-bold mb-4 text-orange-500">Donor Sign Up</h1>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-bold mb-2"
-            >
+            <label className="block text-gray-700 font-bold mb-2">
               First Name
             </label>
             <input
@@ -67,13 +54,11 @@ const SignUpDonor = () => {
               id="firstName"
               placeholder="Enter First Name"
               value={FName}
-              onChange={(e)=>setFirstName(e.target.value)}
-              />
+              onChange={(e) => setFirstName(e.target.value)}
+            />
           </div>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-bold mb-2"
-            >
+            <label className="block text-gray-700 font-bold mb-2">
               Last Name
             </label>
             <input
@@ -81,41 +66,31 @@ const SignUpDonor = () => {
               id="lastName"
               placeholder="Enter Last Name"
               value={LName}
-              onChange={(e)=>setLastName(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
             />
           </div>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Phone
-            </label>
+            <label className="block text-gray-700 font-bold mb-2">Phone</label>
             <input
               type="tel"
               id="phone"
               placeholder="Enter Phone Number"
               value={Phoneno}
-              onChange={(e)=>setPhoneNumber(e.target.value)}
+              onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </div>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Email
-            </label>
+            <label className="block text-gray-700 font-bold mb-2">Email</label>
             <input
               type="email"
               id="email"
               placeholder="Enter Email"
               value={Email}
-              onChange={(e)=>setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-bold mb-2"
-            >
+            <label className="block text-gray-700 font-bold mb-2">
               Password
             </label>
             <input
@@ -123,19 +98,14 @@ const SignUpDonor = () => {
               id="password"
               placeholder="Enter Password"
               value={Password}
-              onChange={(e)=>setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-bold mb-2"
-            >
+            <label className="block text-gray-700 font-bold mb-2">
               Confirm Password
             </label>
-            <input
-              placeholder="Confirm Password"
-            />
-  
+            <input placeholder="Confirm Password" />
           </div>
           <button className="bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Sign Up
