@@ -21,7 +21,7 @@ function Contactpage() {
                 <img
                   src={ContactPageImg}
                   alt="img"
-                  className="w-full h-full object-cover rounded"
+                  className="w-full h-full object-fill rounded"
                 />
               </div>
 

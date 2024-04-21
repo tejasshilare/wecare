@@ -6,8 +6,8 @@ import Statistics from "../components/Statistics";
 const About = () => {
   return (
     <>
-      <Statistics />
       <AboutUs />
+      <Statistics />
       <Gallery />
       <Team />
     </>

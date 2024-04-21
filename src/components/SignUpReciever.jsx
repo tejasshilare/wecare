@@ -65,7 +65,12 @@ const SignUpReceiver = () => {
   return (
     <>
       <div className="flex flex-col  sm:flex-row  justify-center items-center space-x-0 sm:space-x-4">
-        <img src={registerimg} alt={registerimg} width={"500px"} />
+        <img
+          className="md:block hidden"
+          src={registerimg}
+          alt={registerimg}
+          width={"500px"}
+        />
 
         {/* Form Code */}
         <form

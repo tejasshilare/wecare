@@ -16,15 +16,10 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const login = () => {
-    if (user != null) return true;
-    else return false;
-  };
-
   const logoutHandler = async () => {
     try {
       const res = await axios.get(`${API_END_POINT}/logout`);
-      console.log(res);
+      // console.log(res);
       if (res.data.sucess) {
         toast.success(res.data.message);
       }
