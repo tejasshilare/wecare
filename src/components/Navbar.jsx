@@ -66,34 +66,38 @@ const Navbar = () => {
             Contact
           </li>
         </Link>
-        <>
-          <Link to="/" className="pl-[10px]">
-            <li
-              className="p-4 hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer lg:hover:font-2xl"
-              onClick={logoutHandler}
-            >
-              logout
-            </li>
-          </Link>
-          <Link to="/" className="pl-[10px]">
-            <li className="w-[35px] h-[35px] mt-[8px]">
-              <img src={usericon} alt="" />
-            </li>
-          </Link>
-        </>
-        <>
-          <Link to="/signup" className="pl-[10px]">
-            <li className="p-4 text-green-500 font-medium hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer rounded-md md:hover:bg-orange-300 lg:hover:font-2xl ">
-              Register
-            </li>
-          </Link>
+        {user && (
+          <>
+            <Link to="/" className="pl-[10px]">
+              <button
+                className="w-[100px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block"
+                onClick={logoutHandler}
+              >
+                logout
+              </button>
+            </Link>
+            <Link to="../pages/Profile.jsx" className="pl-[10px]">
+              <li className="w-[40px] h-[40px] mt-[8px]">
+                <img src={usericon} alt="" />
+              </li>
+            </Link>
+          </>
+        )}
+        {!user && (
+          <>
+            <Link to="/signup" className="pl-[10px]">
+              <li className="p-4 text-green-500 font-medium hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer rounded-md md:hover:bg-orange-300 lg:hover:font-2xl ">
+                Register
+              </li>
+            </Link>
 
-          <Link to="/login" className="pl-[10px]">
-            <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block">
-              Login
-            </button>
-          </Link>
-        </>
+            <Link to="/login" className="pl-[10px]">
+              <button className="w-[100px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block">
+                Login
+              </button>
+            </Link>
+          </>
+        )}
       </ul>
 
       <div onClick={handleNav} className="block md:hidden">
@@ -113,35 +117,49 @@ const Navbar = () => {
             onClick={handleNav}
             className=" my-auto mx-6 md:hidden inline-block "
           >
-            <button className="w-[110px] h-[35px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center ">
-              Login
-            </button>
+            <div className="flex">
+              {!user && (
+                <button className="w-[110px] h-[35px] text-white my-auto bg-orange-400 rounded-full hover:bg-red-500 text-center ">
+                  Login
+                </button>
+              )}
+              {user && (
+                <button className="w-[110px] h-[35px] text-white my-auto bg-orange-400 rounded-full hover:bg-red-500 text-center ">
+                  logout
+                </button>
+              )}
+            </div>
           </Link>
         </div>
 
         <ul className="p-4 uppercase">
-          <Link to="/" onClick={handleNav}>
-            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-ggray-400 md:hover:bg-gray-400 lg:hover:font-2xl">
+          <Link to="/Profile" onClick={handleNav}>
+            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer">
+              Profile
+            </li>
+          </Link>
+          <Link to="/Home" onClick={handleNav}>
+            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer">
               Home
             </li>
           </Link>
           <Link to="/Donation" onClick={handleNav}>
-            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-400 md:hover:bg-gray-400 lg:hover:font-2xl">
+            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer">
               Donation
             </li>
           </Link>
           <Link to="/about" onClick={handleNav}>
-            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer sm:hover:bg-gray-400 md:hover:bg-gray-400 lg:hover:font-2xl">
+            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer">
               About
             </li>
           </Link>
           <Link to="/Contact" onClick={handleNav}>
-            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer lg:hover:font-2xl">
+            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer">
               Contact
             </li>
           </Link>
           <Link to="/signup" onClick={handleNav}>
-            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer lg:hover:font-2xl">
+            <li className="p-4 border-b border-gray-800 hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer">
               Register
             </li>
           </Link>
