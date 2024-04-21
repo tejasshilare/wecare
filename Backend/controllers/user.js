@@ -5,10 +5,10 @@ import jwt from "jsonwebtoken";
 export const Login = async (req, res) => {
   try {
     const { Email, Password } = req.body;
-    console.log("Received request:", req.body);
+    // console.log("Received request:", req.body);
 
     if (!Email || !Password) {
-      console.log("Invalid Data: Email or Password is missing.");
+      // console.log("Invalid Data: Email or Password is missing.");
       return res.status(401).json({
         message: "Invalid Data",
         success: false,
@@ -16,10 +16,10 @@ export const Login = async (req, res) => {
     }
 
     const user = await User.findOne({ Email });
-    console.log("User found:", user);
+    // console.log("User found:", user);
 
     if (!user) {
-      console.log("User not found for email:", Email);
+      // console.log("User not found for email:", Email);
       return res.status(401).json({
         message: "Invalid email or password",
         success: false,
@@ -27,10 +27,10 @@ export const Login = async (req, res) => {
     }
 
     const isMatch = await bcryptjs.compare(Password, user.Password);
-    console.log("Password comparison result:", isMatch);
+    // console.log("Password comparison result:", isMatch);
 
     if (!isMatch) {
-      console.log("Password does not match for user:", user._id);
+      // console.log("Password does not match for user:", user._id);
       return res.status(401).json({
         message: "Invalid email or password",
         success: false,
@@ -43,7 +43,7 @@ export const Login = async (req, res) => {
     const token = await jwt.sign(tokenData, "awdadsadawawcawcawd", {
       expiresIn: "1d",
     });
-    console.log("Token generated successfully for user:", user._id);
+    // console.log("Token generated successfully for user:", user._id);
 
     return res
       .status(200)
@@ -54,7 +54,7 @@ export const Login = async (req, res) => {
         success: true,
       });
   } catch (error) {
-    console.log("Error occurred:", error);
+    console.log(error);
     return res.status(500).json({
       message: "Internal Server Error",
       success: false,

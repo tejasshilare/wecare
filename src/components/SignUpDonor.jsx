@@ -16,10 +16,10 @@ const SignUpDonor = () => {
     e.preventDefault();
 
     const user = { FName, LName, Phoneno, Email, Password };
-    console.log(user);
+    // console.log(user);
     try {
       const res = await axios.post(`${API_END_POINT}/register`, user);
-      console.log(res);
+      // console.log(res);
       if (res.data.success) {
         toast.success(res.data.message);
       }
@@ -38,7 +38,12 @@ const SignUpDonor = () => {
   return (
     <>
       <div className="flex flex-col  sm:flex-row  justify-center items-center space-x-0 sm:space-x-4">
-        <img src={donateimg} alt={donateimg} width={"500px"}></img>
+        <img
+          className="md:block hidden"
+          src={donateimg}
+          alt={donateimg}
+          width={"500px"}
+        ></img>
 
         <form
           className="bg-white p-8 rounded-lg w-[400px] shadow-md"

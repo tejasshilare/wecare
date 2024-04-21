@@ -19,11 +19,11 @@ const Login = () => {
 
   const getInputData = async (e) => {
     e.preventDefault();
-    console.log("Start of getInputData function");
+    // console.log("Start of getInputData function");
     const user = { Email, Password };
-    console.log("User object:", user);
+    // console.log("User object:", user);
     try {
-      console.log("Api call started");
+      // console.log("Api call started");
       const res = await axios.post(`${API_END_POINT}/login`, user, {
         headers: {
           "Content-Type": "application/json",
@@ -34,19 +34,19 @@ const Login = () => {
         toast.success(res.data.message);
       }
       dispatch(setUser(res.data.user));
-      console.log("Login response:", res);
-      console.log(res.data.user);
+      // console.log("Login response:", res);
+      // console.log(res.data.user);
       dispatch(setUser(res.data.user));
       setIsLogin(true);
       navigate("/Home");
     } catch (error) {
       toast.error(error.response.data.message);
-      console.log("Login error:", error);
+      console.log(error);
       if (error.response.status === 401) {
         const redirectToAnotherPage = window.confirm(
           "Invalid credentials. Click to create a new account"
         );
-        console.log("Redirect confirmation:", redirectToAnotherPage);
+        // console.log("Redirect confirmation:", redirectToAnotherPage);
         if (redirectToAnotherPage) {
           // Redirect to another page
           navigate("/Signup");
@@ -57,7 +57,6 @@ const Login = () => {
     }
     setEmail("");
     setPassword("");
-    console.log("End of getInputData function");
   };
 
   return (
