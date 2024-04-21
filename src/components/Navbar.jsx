@@ -2,15 +2,19 @@ import React from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 import weblg from "../assets/weblg.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import usericon from "../assets/usericon.svg";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { API_END_POINT } from "../utils/constant";
+import { setUser } from "../redux/userSlice";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const user = useSelector((store) => store.app.user);
   const [nav, setNav] = useState(true);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const login = () => {
     if (user != null) return true;
@@ -21,6 +25,11 @@ const Navbar = () => {
     try {
       const res = await axios.get(`${API_END_POINT}/logout`);
       console.log(res);
+      if (res.data.sucess) {
+        toast.success(res.data.message);
+      }
+      dispatch(setUser(null));
+      navigate("/login");
     } catch (error) {
       console.log(error);
     }
@@ -57,38 +66,34 @@ const Navbar = () => {
             Contact
           </li>
         </Link>
-        {user && (
-          <>
-            <Link to="/" className="pl-[10px]">
-              <li
-                className="p-4 hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer lg:hover:font-2xl"
-                onClick={logoutHandler}
-              >
-                logout
-              </li>
-            </Link>
-            <Link to="/" className="pl-[10px]">
-              <li className="w-[35px] h-[35px] mt-[8px]">
-                <img src={usericon} alt="" />
-              </li>
-            </Link>
-          </>
-        )}
-        {!user && (
-          <>
-            <Link to="/signup" className="pl-[10px]">
-              <li className="p-4 text-green-500 font-medium hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer rounded-md md:hover:bg-orange-300 lg:hover:font-2xl ">
-                Register
-              </li>
-            </Link>
+        <>
+          <Link to="/" className="pl-[10px]">
+            <li
+              className="p-4 hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer lg:hover:font-2xl"
+              onClick={logoutHandler}
+            >
+              logout
+            </li>
+          </Link>
+          <Link to="/" className="pl-[10px]">
+            <li className="w-[35px] h-[35px] mt-[8px]">
+              <img src={usericon} alt="" />
+            </li>
+          </Link>
+        </>
+        <>
+          <Link to="/signup" className="pl-[10px]">
+            <li className="p-4 text-green-500 font-medium hover:bg-[#D3D3D3] transition-colors duration-300 cursor-pointer rounded-md md:hover:bg-orange-300 lg:hover:font-2xl ">
+              Register
+            </li>
+          </Link>
 
-            <Link to="/login" className="pl-[10px]">
-              <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block">
-                Login
-              </button>
-            </Link>
-          </>
-        )}
+          <Link to="/login" className="pl-[10px]">
+            <button className="w-[110px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block">
+              Login
+            </button>
+          </Link>
+        </>
       </ul>
 
       <div onClick={handleNav} className="block md:hidden">
