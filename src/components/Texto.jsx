@@ -17,7 +17,7 @@ const Texto = () => {
           <br />
           detailed metrics on the impact of those contributions.
         </p>
-        <div className="grid grid-rows-3  bg-slate-300 my-16 text-lg text-center">
+        <div className="grid grid-rows-3  bg-ch-grey my-16 text-lg text-center">
           <div className="grid grid-cols-2 m-12">
             <div className="flex justify-evenly">
               <img src={location} alt="" className="w-8 h-8" />
