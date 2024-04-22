@@ -34,6 +34,13 @@ body {
   border: 1px solid rgb(229, 229, 229);
   border-radius: 10px;
 }
+.bg-ch-grey{
+  background-color: #f1f4f8;
+}
+.vl {
+  border-left: 1px solid rgb(91, 91, 91);
+  margin-inline: 20px;
+}
 
 /* SignUp Css */
 
