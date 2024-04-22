@@ -18,6 +18,9 @@ const Footer = () => {
         <div class="lg:w-1/3 md:w-1/2 w-full px-4">
           <h2 className="font-bold text-xl mt-4">WeCare</h2>
           <div className="w-32 h-1 border-b-2 border-yellow-400 rounded-2xl my-2 mx-auto md:mx-0 "></div>
+          <Link to="/profile">
+            <li className="hover:text-orange-400 py-1">Profile</li>
+          </Link>
           <Link to="/Home">
             <li className="hover:text-orange-400 py-1">Home</li>
           </Link>
@@ -30,7 +33,7 @@ const Footer = () => {
           <Link to="/Contact">
             <li className="hover:text-orange-400 py-1">Contact</li>
           </Link>
-          <Link to="/signup">
+          <Link to="/login">
             <li className="hover:text-orange-400 py-1">Login</li>
           </Link>
           <Link to="/signup">

@@ -63,7 +63,7 @@ const Navbar = () => {
         </Link>
         {user && (
           <>
-            <Link to="/" className="pl-[10px]">
+            <Link to="/login" className="pl-[10px]">
               <button
                 className="w-[100px] h-[35px] mt-[7px] text-white  bg-orange-400 rounded-full hover:bg-red-500 text-center hidden sm:inline-block"
                 onClick={logoutHandler}
@@ -71,7 +71,7 @@ const Navbar = () => {
                 logout
               </button>
             </Link>
-            <Link to="../pages/Profile.jsx" className="pl-[10px]">
+            <Link to="/profile" className="pl-[10px]">
               <li className="w-[40px] h-[40px] mt-[8px]">
                 <img src={usericon} alt="" />
               </li>
