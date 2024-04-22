@@ -38,7 +38,7 @@ const Login = () => {
       // console.log(res.data.user);
       dispatch(setUser(res.data.user));
       setIsLogin(true);
-      navigate("/Home");
+      navigate("/profile");
     } catch (error) {
       toast.error(error.response.data.message);
       console.log(error);
