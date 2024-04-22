@@ -41,12 +41,12 @@ const Navbar = () => {
       </a>
 
       <ul className="hidden md:flex ">
-        <Link to="/Home">
+        <Link to="/home">
           <li className="p-4 hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer  lg:hover:font-2xl">
             Home
           </li>
         </Link>
-        <Link to="/Donation">
+        <Link to="/donation">
           <li className="p-4  hover-ul hover:font-bold  transition-colors duration-300 cursor-pointer lg:hover:font-2xl">
             Donation
           </li>
@@ -71,7 +71,7 @@ const Navbar = () => {
                 logout
               </button>
             </Link>
-            <Link to="../pages/Profile.jsx" className="pl-[10px]">
+            <Link to="/profile" className="pl-[10px]">
               <li className="w-[40px] h-[40px] mt-[8px]">
                 <img src={usericon} alt="" />
               </li>
